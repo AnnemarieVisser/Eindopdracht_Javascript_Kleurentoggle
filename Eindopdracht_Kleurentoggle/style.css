@@ -5,7 +5,7 @@
 
 html, body {
   height: 100%;
-  background-color: aliceblue;
+  background-color: #f0f8ff;
 }
 
 li {
@@ -16,43 +16,49 @@ li {
   font-size: large;
 }
 
+.navigation {
+  color: #262727;
+}
+
 .menuimg {
-  width: 200px;
+  width: 100px;
+}
+
+.menuimg:hover {
+  opacity: 0.5;
+  -webkit-transition: opacity 250ms ease-in;
+  transition: opacity 250ms ease-in;
 }
 
 #navigation {
   display: none;
 }
 
-#navigation {
-  display: none;
+#nocolor {
+  background-color: #f0f8ff;
 }
 
-.none {
-  background-color: aliceblue;
+#redcolor {
+  background-color: #ff6464;
 }
 
-.red {
-  background-color: red;
+#orangecolor {
+  background-color: #fcb36a;
 }
 
-.orange {
-  background-color: orange;
+#yellowcolor {
+  background-color: #f8f85b;
 }
 
-.yellow {
-  background-color: yellow;
+#greencolor {
+  background-color: #bcf384;
 }
 
-.green {
-  background-color: green;
+#bluecolor {
+  background-color: #4848d6;
 }
 
-.blue {
-  background-color: blue;
-}
-
-.purple {
-  background-color: purple;
+#purplecolor {
+  background-color: #ae71eb;
 }
 /*# sourceMappingURL=style.css.map */

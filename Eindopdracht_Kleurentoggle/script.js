@@ -1,60 +1,53 @@
-//maak van background een element
+//make element from background
 const bgColor = document.querySelector("body");
-
-//als je op kleur/list [1] klikt, worden alle andere kleuren verwijderd
-//alleen de juiste kleur blijft over
-
-const noColor = document.querySelector(".none");
-const red = document.querySelector(".red");
-const orange = document.querySelector(".orange");
-const yellow = document.querySelector(".yellow");
-const green = document.querySelector(".green");
-const blue = document.querySelector(".blue");
-const purple = document.querySelector(".purple");
-
-noColor.addEventListener('click', function () {
-    bgColor.classList.remove('red', 'orange', 'yellow', 'green', 'blue', 'purple');
-    bgColor.classList.add('none');
-})
-
-red.addEventListener('click', function () {
-    bgColor.classList.remove('red', 'orange', 'yellow', 'green', 'blue', 'purple', 'none');
-    bgColor.classList.add('red');
-})
-
-orange.addEventListener('click', function () {
-    bgColor.classList.remove('red', 'orange', 'yellow', 'green', 'blue', 'purple', 'none');
-    bgColor.classList.add('orange');
-})
-
-yellow.addEventListener('click', function () {
-    bgColor.classList.remove('red', 'orange', 'yellow', 'green', 'blue', 'purple', 'none');
-    bgColor.classList.add('yellow');
-})
-
-green.addEventListener('click', function () {
-    bgColor.classList.remove('red', 'orange', 'yellow', 'green', 'blue', 'purple', 'none');
-    bgColor.classList.add('green');
-})
-
-blue.addEventListener('click', function () {
-    bgColor.classList.remove('red', 'orange', 'yellow', 'green', 'blue', 'purple', 'none');
-    bgColor.classList.add('blue');
-})
-
-purple.addEventListener('click', function () {
-    bgColor.classList.remove('red', 'orange', 'yellow', 'green', 'blue', 'purple', 'none');
-    bgColor.classList.add('purple');
-})
-
-
+//select navigation menu
+let menu = document.getElementById("navigation");
+//selector for listitems
+let menuItems = document.getElementsByClassName("navcolor");
 //Hamburger menu
+let hamburgerMenu = document.querySelector(".menuimg");
+hamburgerMenu.addEventListener('click', toggleMenu);
 
-function myFunction() {
-    var x = document.getElementById("navigation");
-    if (x.style.display === "block") {
-        x.style.display = "none";
+function toggleMenu() {
+
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
     } else {
-        x.style.display = "block";
+        menu.style.display = "block";
     }
 }
+
+//define all background colors
+let getBackgroundColor = function (targetColor) {
+
+    switch (targetColor) {
+        case 'No Color':
+            return '#f0f8ff';
+        case 'Red':
+            return '#ff6464';
+        case 'Orange':
+            return '#fcb36a';
+        case 'Yellow':
+            return '#f8f85b';
+        case 'Green':
+            return '#bcf384';
+        case 'Blue':
+            return '#4848d6';
+        case 'Purple':
+            return '#ae71eb';
+        default:
+            console.log("No color was selected");
+    }
+}
+
+//change background color
+let colorChange = function (color) {
+
+    let eventToHandle = color.target.innerText;
+    bgColor.style.background = getBackgroundColor(eventToHandle);
+
+    toggleMenu();
+}
+
+//add eventlisteners to all menu items
+Array.from(menuItems).forEach(item => item.addEventListener('click', colorChange));

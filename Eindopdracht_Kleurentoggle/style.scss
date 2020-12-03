@@ -7,66 +7,71 @@
 html, body 
 {
     height: 100%;
-    background-color: aliceblue;
+    background-color: #f0f8ff;
 }
 
-li {
+li 
+{
     width: 200px;
     padding: 20px;
     text-align: center;
     border: 1px solid black;
     font-size: large;
+    
+}
+
+.navigation
+{ 
+    color: #262727;
 }
 
 .menuimg
 {
-    width: 200px;
+    width: 100px;
+
+    &:hover
+    {
+        opacity: 0.5;
+        transition: opacity 250ms ease-in;
+    }
 }
 
 #navigation
 {
-    display: none;
+    display: none; 
 }
 
-#navigation
+#nocolor
 {
-    display: none;
+    background-color: #f0f8ff;
 }
 
-.none
+#redcolor
 {
-    background-color: aliceblue;
+    background-color: #ff6464;
 }
 
-.red
+#orangecolor
 {
-    background-color: red;
+    background-color: #fcb36a;
 }
 
-.orange
+#yellowcolor
 {
-    background-color: orange;
+    background-color: #f8f85b;
 }
 
-.yellow
+#greencolor
 {
-    background-color: yellow;
+    background-color: #bcf384;
 }
 
-.green
+#bluecolor
 {
-    background-color: green;
+    background-color: #4848d6;
 }
 
-.blue
+#purplecolor
 {
-    background-color: blue;
+    background-color: #ae71eb;
 }
-
-.purple
-{
-    background-color: purple;
-}
-
-
-
